@@ -3,10 +3,11 @@ package entities;
 import java.awt.image.BufferedImage;
 
 public class Entity {
-    private int x, y, width, height;
+    protected int width, height;
+    protected double x, y;
     private BufferedImage sprite;
 
-    public Entity(int x, int y, int width, int height, BufferedImage sprite) {
+    public Entity(double x, double y, int width, int height, BufferedImage sprite) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -22,11 +23,11 @@ public class Entity {
     }
 
     public int getX() {
-        return x;
+        return (int)x;
     }
 
     public int getY() {
-        return y;
+        return (int)y;
     }
 
     public int getWidth() {
