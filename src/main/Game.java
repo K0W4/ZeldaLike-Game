@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 
 import entities.*;
 import graphics.*;
+import world.*;
 
 public class Game extends Canvas implements Runnable, KeyListener {
 	public static JFrame frame;
@@ -25,12 +26,16 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	public ArrayList<Entity> entities;
 	public static Spritesheet spritesheet;
 
+	public static World world;
+
 	private Player player;
 	
 	public Game() {
 		addKeyListener(this);
 		setPreferredSize(new Dimension(width * scale, height * scale));
 		initFrame();
+
+		world = new World("/res/level1.png");
 
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		entities = new ArrayList<>();
